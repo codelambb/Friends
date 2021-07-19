@@ -436,7 +436,7 @@ class ExampleCog(commands.Cog):
     @commands.command()
     @commands.has_permissions(ban_members = True)
     async def reminder(self, ctx, *, warn =  None):
-      id = 859364313626312705
+      id = 865106631355531332
       channe = get(ctx.guild.channels, id=id)
       if warn is not None:
         await ctx.message.delete()
@@ -477,7 +477,7 @@ class ExampleCog(commands.Cog):
             
 
     @reminder.error
-    async def reminder_error(ctx, error):
+    async def reminder_error(self, ctx, error):
       if isinstance(error, commands.MissingPermissions):
         await ctx.send("You don't have the permission to use that command!")
 
